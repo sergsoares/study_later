@@ -7,7 +7,22 @@
 </div>
 
 <% if logged_in? %>
-	<h2>Add a link to study:</h2>
+	<h1>Search links</h1>
+
+	<%= form_for(:options, url: search_path) do |f| %>
+	  <p>
+	    <%= f.label :title %><br>
+	    <%= f.text_field :title %>
+	  </p>
+
+	  <%= f.select :desired_attribute, [@current_user.links.distinct.pluck(:category).uniq], {}, { index: nil } %>
+
+	  <p>
+	    <%= f.submit %>
+	  </p>
+	<% end %>	
+
+	<h1>Add a link to study:</h1>
 	<%= render 'links/form' %>
 	
 	<h1>Links</h1>

@@ -1,0 +1,12 @@
+<h1>All links</h1>
+
+<%= will_paginate %>
+
+<ul class="links">
+  <% @links.each do |link| %>
+    <%= render link %>
+  <% end %>
+
+<%= will_paginate %>
+
+</ul>

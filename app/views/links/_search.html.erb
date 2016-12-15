@@ -1,0 +1,14 @@
+	<h1>Search links</h1>
+
+	<%= form_for(:options, url: search_path) do |f| %>
+	  <p>
+	    <%= f.label :title %><br>
+	    <%= f.text_field :title %>
+	  </p>
+
+	  <%= f.select :id, category_options_ids, include_blank: true %>
+
+	  <p>
+	    <%= f.submit %>
+	  </p>
+	<% end %>	

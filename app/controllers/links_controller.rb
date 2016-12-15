@@ -22,8 +22,12 @@ class LinksController < ApplicationController
 	end
 
 	def search
-		@user = User.find(current_user)
-		@links = @user.links.where("title like ?", "%#{params[:options][:title]}%").paginate(page: params[:page])
+		user = current_user
+		if params[:options][:id] == ""
+			@links = user.links.where("title like ?", "%#{params[:options][:title]}%").paginate(page: params[:page])
+		else
+			@links = user.links.where("title like ? and category_id = ?", "%#{params[:options][:title]}%", params[:options][:id] ).paginate(page: params[:page])						
+		end
 	end
 
 	private

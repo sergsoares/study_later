@@ -7,20 +7,8 @@
 </div>
 
 <% if logged_in? %>
-	<h1>Search links</h1>
-
-	<%= form_for(:options, url: search_path) do |f| %>
-	  <p>
-	    <%= f.label :title %><br>
-	    <%= f.text_field :title %>
-	  </p>
-
-	  <%= f.select :desired_attribute, category_options_ids, include_blank: true %>
-
-	  <p>
-	    <%= f.submit %>
-	  </p>
-	<% end %>	
+	
+	<%= render 'links/search' %>
 
 	<h1>Add a link to study:</h1>
 	<%= render 'links/form' %>

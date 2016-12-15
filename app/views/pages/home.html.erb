@@ -15,7 +15,7 @@
 	    <%= f.text_field :title %>
 	  </p>
 
-	  <%= f.select :desired_attribute, [@current_user.links.distinct.pluck(:category).uniq], {}, { index: nil } %>
+	  <%= f.select :desired_attribute, category_options_ids, include_blank: true %>
 
 	  <p>
 	    <%= f.submit %>

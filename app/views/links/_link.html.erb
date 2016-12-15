@@ -4,8 +4,8 @@
   <strong>Link:</strong>
   <%= link.link %>
   <strong>Category:</strong>
+  <%= category_name(link.category_id) %>
 
-  <%= link.category %>
   <%= link_to 'Readed ', [link.user, link],
                method: :delete,
                data: { confirm: 'Are you sure already read?' } %>

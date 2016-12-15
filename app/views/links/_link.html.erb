@@ -1,0 +1,15 @@
+<p>
+  <strong>Name:</strong>
+  <%= link.name %>
+</p>
+ 
+<p>
+  <strong>Link:</strong>
+  <%= link.link %>
+</p>
+
+<p>
+  <%= link_to 'Destroy Link', [link.user, link],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>

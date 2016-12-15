@@ -1,1 +1,15 @@
-<%= @user.name %>, <%= @user.email %>
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+ 
+<p>
+  <strong>Email:</strong>
+  <%= @user.email%>
+</p>
+
+<h2>Links</h2>
+<%= render @user.links %>
+
+<h2>Add a link to study:</h2>
+<%= render 'links/form' %>

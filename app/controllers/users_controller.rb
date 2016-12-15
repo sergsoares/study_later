@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   		flash[:success] = "Start save links for study later"
   		redirect_to @user
   	else
+      flash[:warning] = "Create Fail, Try Again"
   		render 'new'
   	end
   end

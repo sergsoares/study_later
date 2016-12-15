@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def show
   	if logged_in?
     	@user = User.find(params[:id])
-	end    	
+	  end    	
   end
 
   def create

@@ -1,15 +1,12 @@
 <p>
   <strong>Name:</strong>
   <%= link.name %>
-</p>
- 
-<p>
   <strong>Link:</strong>
   <%= link.link %>
-</p>
+  <strong>Category:</strong>
 
-<p>
-  <%= link_to 'Destroy Link', [link.user, link],
+  <%= link.category %>
+  <%= link_to 'Readed ', [link.user, link],
                method: :delete,
-               data: { confirm: 'Are you sure?' } %>
+               data: { confirm: 'Are you sure already read?' } %>
 </p>

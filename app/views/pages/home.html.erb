@@ -1,5 +1,15 @@
 <div class="center jumbotron">
 	<h1>Study later - This is a APP for save link for future reading</h1>
 
-	<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+	<% if !logged_in? %>
+		<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+	<% end %>
 </div>
+
+<% if logged_in? %>
+	<h2>Add a link to study:</h2>
+	<%= render 'links/form' %>
+	
+	<h1>Links</h1>
+	<%= render @current_user.links %>
+<% end %>

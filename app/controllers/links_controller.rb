@@ -16,7 +16,7 @@ end
 
   private
 	def link_params
-		params.require(:link).permit(:name, :link)
+		params.require(:link).permit(:name, :link, :category)
 	end
 
 end

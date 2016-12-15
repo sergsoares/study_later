@@ -30,14 +30,14 @@ Category.create(name: "programming",
 Category.create(name: "teory",
 	            user_id: jera.id)
 
-200.times do
+15.times do
 	Link.create(title:  Faker::Educator.course,
-				link: Faker::Internet.url,
+				link: "http://stackoverflow.com",
 				category_id: rand(1..3),
 				user_id: sergio.id)
 
 	Link.create(title:  Faker::Educator.course,
-				link: Faker::Internet.url,
+				link: "http://stackoverflow.com" ,
 				category_id: rand(4..6),
 				user_id: jera.id)
 end

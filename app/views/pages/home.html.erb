@@ -1,18 +1,25 @@
 <div class="center jumbotron">
-	<h1>Study later - This is a APP for save link for future reading</h1>
-
+	<h1>Study Later - This is a APP to save link for future study </h1>
 	<% if !logged_in? %>
-		<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+	<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+	<%= link_to "Loggin now!", login_path, class: "btn btn-lg btn-primary" %>
 	<% end %>
 </div>
 
 <% if logged_in? %>
-	
-	<%= render 'links/search' %>
+<div class="row">
+	<div class="col-md-4">
+	<%= link_to "See all Links", links_path, class:"btn btn-default btn-lg btn-block btn-huge"%>
+	</div>
 
-	<h1>Add a link to study:</h1>
-	<%= render 'links/form' %>
-	
-	<h1>Links</h1>
-	<%= render @current_user.links %>
+	<div class="col-md-4">
+		<%= link_to "Add Links", add_path, class:"btn btn-default btn-lg btn-block btn-huge"%>
+	</div>
+
+	<div class="col-md-4">
+	<%= link_to "Search Links", search_path, class:"btn btn-default btn-lg btn-block btn-huge"%>
+	</div>
+</div>
+
+
 <% end %>

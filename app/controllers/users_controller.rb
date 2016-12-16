@@ -12,14 +12,20 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new(user_params)
-  	if @user.save
-  		log_in @user
-  		flash[:success] = "Start save links for study later"
-  		redirect_to @user
-  	else
-      flash[:warning] = "Create Fail, Try Again"
-  		render 'new'
-  	end
+    begin
+      	if @user.save
+      		log_in @user
+      		flash[:success] = "Start save links for study later"
+      		redirect_to @user
+      	else
+          flash[:warning] = "Create Fail, Try Again"
+      		render 'new'
+       	end
+    rescue => e
+      flash[:warning] = "Email already exists"
+      render 'new'
+    end
+
   end
 
   def edit

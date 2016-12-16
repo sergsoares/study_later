@@ -20,23 +20,23 @@ Category.create(name: "learn",
 	            user_id: sergio.id)
 Category.create(name: "programming",
 	            user_id: sergio.id)
-Category.create(name: "teory",
+Category.create(name: "theory",
 	            user_id: sergio.id)
 
 Category.create(name: "learn",
 	            user_id: jera.id)
 Category.create(name: "programming",
 	            user_id: jera.id)
-Category.create(name: "teory",
+Category.create(name: "theory",
 	            user_id: jera.id)
 
 
-Link.create(link: "http://stackoverflow.com",
+Link.create(link: "http://blog.alura.com.br/carreira-na-area-de-tecnologia-como-conseguir-o-trabalho-dos-sonhos/",
 			category_id: 1,
 			user_id: sergio.id,
 			path: 'default-news-image.jpg')
 
-Link.create(link: "http://stackoverflow.com" ,
-			category_id: rand(4..6),
+Link.create(link: "http://jera.com.br/blog/4931/design-ux/design-responsivo-o-que-e" ,
+			category_id: 6,
 			user_id: jera.id,
 			path: 'default-news-image.jpg')

@@ -32,11 +32,13 @@ Category.create(name: "theory",
 
 
 Link.create(link: "http://blog.alura.com.br/carreira-na-area-de-tecnologia-como-conseguir-o-trabalho-dos-sonhos/",
+			title: "Carreira na área de tecnologia: como conseguir o trabalho dos sonhos!",
 			category_id: 1,
 			user_id: sergio.id,
 			path: 'default-news-image.jpg')
 
 Link.create(link: "http://jera.com.br/blog/4931/design-ux/design-responsivo-o-que-e" ,
+			title: "Design responsivo, Desenvolvimento Nativo e App Híbrido, quando usar?",
 			category_id: 6,
 			user_id: jera.id,
 			path: 'default-news-image.jpg')

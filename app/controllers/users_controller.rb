@@ -4,9 +4,10 @@ class UsersController < ApplicationController
   end
 
   def show
-  	if logged_in?
+    user = current_user
+  	if logged_in? && user.id.to_s == params[:id] 
     	@user = User.find(params[:id])
-	  end    	
+	  end
   end
 
   def create
@@ -19,6 +20,20 @@ class UsersController < ApplicationController
       flash[:warning] = "Create Fail, Try Again"
   		render 'new'
   	end
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      flash[:success] = "Profile updated"
+      redirect_to @user
+    else
+      render 'edit'
+    end
   end
 
   private

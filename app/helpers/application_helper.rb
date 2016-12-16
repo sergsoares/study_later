@@ -9,7 +9,7 @@ module ApplicationHelper
 	end
 
 	def category_options_ids
-		ids_arr = @current_user.links.pluck(:category_id).uniq
+		ids_arr = @current_user.categories.pluck(:id)
 
 		names_arr = []
 		ids_arr.each do |id|
@@ -42,7 +42,16 @@ module ApplicationHelper
 		# object = LinkThumbnailer.generate('http://stackoverflow.com')
 
 		# object.images.first.src.to_s
-
-		
 	end 
+
+	def thumbnail_download(link)
+		object = LinkThumbnailer.generate(link.link)
+
+		open('app/assets/images/'+link.id.to_s+".png", 'wb') do |file|
+			file << open(object.images.first.src.to_s).read
+		end
+
+	end
+		
+
 end

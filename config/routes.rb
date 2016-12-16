@@ -10,10 +10,11 @@ Rails.application.routes.draw do
   get 'search', to: 'pages#search'
   get 'add', to: 'pages#add'
   post 'search', to: 'links#search'
+  get 'category', to: 'categories#new'
+  
+  post 'category', to: 'categories#create'
 
   resources :users do
     resources :links
   end
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

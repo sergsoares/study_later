@@ -6,14 +6,16 @@
             <div class="well well-sm">
                 <div class="row">
                     <div class="col-xs-3 col-md-2 text-center">
-                    <%= image_tag(thumbnail_link(link.id), size: "120x120", alt: "Edit Entry",  class: "img-rounded img-responsive") %>
+                    <%= image_tag(link.path, size: "120x120", alt: "Edit Entry",  class: "img-rounded img-responsive") %>
                         
                     </div>
                     <div class="col-xs-9 col-md-9 section-box">
-                        <h3>Title: <%= link.title %> 
-                            <span class="separator">|</span> 
-                            Category: <%= category_name(link.category_id) %>
-                        </h3>
+                        <a href=<%= link.link %> target="_blank">
+                            <h3>Title: <%= link.title %> 
+                                <span class="separator">|</span> 
+                                Category: <%= category_name(link.category_id) %>
+                            </h3>
+                        </a>
                         <hr />
                         <div class="row rating-desc">
                             <div class="col-md-12">
@@ -21,7 +23,7 @@
                                           method: :delete,
                                           data: { confirm: 'Are you sure already read?' }, class:"glyphicon glyphicon-bookmark" %>
                                <span class="separator">|</span>
-                                <%= link_to 'Enter-link', link.link, class:"glyphicon glyphicon-share-alt" %>
+                                <%= link_to 'Enter-link', link.link, class:"glyphicon glyphicon-share-alt",  target:"_blank"%>
                             </div>
                         </div>
                     </div>

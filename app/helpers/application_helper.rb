@@ -24,9 +24,6 @@ module ApplicationHelper
 	def thumbnail_link(id)
 		path = 'app/assets/images/'+id.to_s+'.png'
 
-		# link = Link.find(id)
-		
-
 		if File.exist?(path)
 			id.to_s+'.png'
 		else
@@ -36,12 +33,7 @@ module ApplicationHelper
 		 	end
 		 	id.to_s+'.png'
 		end
-		
-		 	
-		# end	
-		# object = LinkThumbnailer.generate('http://stackoverflow.com')
 
-		# object.images.first.src.to_s
 	end 
 
 	def thumbnail_download(link)
@@ -52,6 +44,4 @@ module ApplicationHelper
 		end
 
 	end
-		
-
 end

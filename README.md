@@ -2,6 +2,9 @@
 
 This is a Study later app developed for Jera Internship.
 
+Ruby Version : 2.3.0
+Rails version : 5.0.0.1
+
 ## To up the app
 
 - Clone this repository

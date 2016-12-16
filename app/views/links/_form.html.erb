@@ -2,10 +2,11 @@
 
     <div class="form-group">
       <%= f.label :link %><br>
-      <%= f.text_field :link , class: 'form-control' %>
+      <%= f.text_field :link, class: 'form-control' %>
     </div>
 
     <div class="form-group">
+      <%= f.label :category %>-
     <%= f.select :category_id, category_options_ids, {include_blank: true, class: "form-control"} %>
     <%= link_to "Add new category", category_path %>
     </div>

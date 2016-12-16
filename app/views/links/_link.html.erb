@@ -1,16 +1,30 @@
-<hr>
-<p>
-  <%= image_tag(thumbnail_link(link.id), size: "70x70", alt: "Edit Entry",  class: "menu_icon") %>
-  <strong>Title:</strong>
-  <%= link.title %>
-  <strong>Link:</strong>
-  <%= link.link %>
 
 
-  <strong>Category:</strong>
-  <%= category_name(link.category_id) %>
-
-  <%= link_to 'Readed ', [link.user, link],
-               method: :delete,
-               data: { confirm: 'Are you sure already read?' } %>
-</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-xs-3 col-md-2 text-center">
+                    <%= image_tag(thumbnail_link(link.id), size: "120x120", alt: "Edit Entry",  class: "img-rounded img-responsive") %>
+                        
+                    </div>
+                    <div class="col-xs-9 col-md-9 section-box">
+                        <h3>Title: <%= link.title %> 
+                            <span class="separator">|</span> 
+                            Category: <%= category_name(link.category_id) %>
+                        </h3>
+                        <hr />
+                        <div class="row rating-desc">
+                            <div class="col-md-12">
+                            <%= link_to 'Readed', [link.user, link],
+                                          method: :delete,
+                                          data: { confirm: 'Are you sure already read?' }, class:"glyphicon glyphicon-bookmark" %>
+                               <span class="separator">|</span>
+                                <%= link_to 'Enter-link', link.link, class:"glyphicon glyphicon-share-alt" %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

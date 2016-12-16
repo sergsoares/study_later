@@ -1,10 +1,8 @@
 <h1>Links</h1>
 
-<ul class="links">
+<ul class="list-group">
   <% @links.each do |link| %>
     <%= render link %>
   <% end %>
-
-<%= will_paginate %>
-
 </ul>
+<%= will_paginate %>
